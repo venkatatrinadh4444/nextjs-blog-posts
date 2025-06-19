@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'
 
 const App = () => {
   const router=useRouter()
-  const submitHandler=(e:any)=> {
+  const submitHandler=(e:React.FormEvent<HTMLFormElement>)=> {
     e.preventDefault()
     router.push('/dashboard')
   }
