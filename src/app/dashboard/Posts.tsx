@@ -1,8 +1,16 @@
 
 import Link from "next/link"
 
+type Post = {
+  id:number,
+  title:string,
+  body:string
+}
 
-const Posts = ({ data }: { data: any[] }) => {
+
+const Posts = async () => {
+  const res=await fetch('https://jsonplaceholder.typicode.com/posts')
+  const data:Post[]=await res.json()
 
     return (
       <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-4">
